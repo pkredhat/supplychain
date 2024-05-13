@@ -1,0 +1,7 @@
+package mongo;
+
+public class db {
+    public static void main(String[] args) {
+        System.out.println("Connecting");
+    }
+}
