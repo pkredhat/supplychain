@@ -14,9 +14,7 @@
     <packaging>jar</packaging>
     <name>Company microservice</name>
     <description>Sample Company microservice designed for RH Launch Teams</description>
-<properties>
-    <java.version>17</java.version>
-</properties>
+
     <dependencies>
         <dependency>
             <groupId>org.mongodb</groupId>

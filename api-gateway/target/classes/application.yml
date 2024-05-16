@@ -14,7 +14,16 @@ spring:
         - id: employee-service
           uri: lb://employee-service
           predicates:
-            - Path=/api/employee/**,/api/employees
+            - Path=/api/employee/**,/api/employees            
+        - id: orders-service
+          uri: lb://orders-service
+          predicates::
+            - Path=/api/order/**,/api/orders
+        - id: product-service
+          uri: lb://product-service
+          predicates::
+            - Path=/api/product/**,/api/products
+         
 
 eureka:
   client:

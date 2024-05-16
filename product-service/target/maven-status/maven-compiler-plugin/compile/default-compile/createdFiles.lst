@@ -1,0 +1,10 @@
+com/redhat/product/repositories/MongoDBProductRepository.class
+com/redhat/product/repositories/ProductRepository.class
+com/redhat/product/exceptions/EntityNotFoundException.class
+com/redhat/product/dtos/ProductDTO.class
+com/redhat/product/services/ProductService.class
+com/redhat/product/ApplicationStarter.class
+com/redhat/product/services/ProductServiceImpl.class
+com/redhat/product/models/ProductEntity.class
+com/redhat/product/controllers/ProductController.class
+com/redhat/product/MongoDBConfiguration.class
