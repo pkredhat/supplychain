@@ -9,6 +9,6 @@ start_mongodb() {
   docker exec "mongo$1" mongosh --quiet --eval "rs.initiate();"
 }
 
-for i in $(seq 2); do
+for i in $(seq 2); do 
   start_mongodb "$i"
 done
