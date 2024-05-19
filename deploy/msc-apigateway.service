@@ -1,0 +1,14 @@
+[Unit]
+Description=API GAteway for microservices
+
+# You may want to start after your network is ready
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+ExecStart=/usr/bin/mvn -f /home/fedora/code/supplychain/api-gateway clean spring-boot:run
+Restart=Always
+PIDFile=/tmp/api-gateway-pid
+
+[Install]
+WantedBy=network-online.target

@@ -1,0 +1,14 @@
+[Unit]
+Description=Customer Microservice for XYZ
+
+# You may want to start after your network is ready
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+ExecStart=/usr/bin/mvn -f /home/fedora/code/supplychain/customer-service clean spring-boot:run
+Restart=Always
+PIDFile=/tmp/customerms-pid
+
+[Install]
+WantedBy=network-online.target

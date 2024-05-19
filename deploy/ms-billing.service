@@ -1,0 +1,14 @@
+[Unit]
+Description=Billing Microservice for XYZ
+
+# You may want to start after your network is ready
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+ExecStart=/usr/bin/mvn -f /home/fedora/code/supplychain/billing-service clean spring-boot:run
+Restart=Always
+PIDFile=/tmp/billingms-pid
+
+[Install]
+WantedBy=network-online.target

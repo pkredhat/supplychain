@@ -1,0 +1,10 @@
+/Users/phknezev/code/redhat/velden/supplychain/stock-service/src/main/java/com/redhat/stock/ApplicationStarter.java
+/Users/phknezev/code/redhat/velden/supplychain/stock-service/src/main/java/com/redhat/stock/MongoDBConfiguration.java
+/Users/phknezev/code/redhat/velden/supplychain/stock-service/src/main/java/com/redhat/stock/controllers/StockController.java
+/Users/phknezev/code/redhat/velden/supplychain/stock-service/src/main/java/com/redhat/stock/dtos/StockDTO.java
+/Users/phknezev/code/redhat/velden/supplychain/stock-service/src/main/java/com/redhat/stock/exceptions/EntityNotFoundException.java
+/Users/phknezev/code/redhat/velden/supplychain/stock-service/src/main/java/com/redhat/stock/models/StockEntity.java
+/Users/phknezev/code/redhat/velden/supplychain/stock-service/src/main/java/com/redhat/stock/repositories/MongoDBStockRepository.java
+/Users/phknezev/code/redhat/velden/supplychain/stock-service/src/main/java/com/redhat/stock/repositories/StockRepository.java
+/Users/phknezev/code/redhat/velden/supplychain/stock-service/src/main/java/com/redhat/stock/services/StockService.java
+/Users/phknezev/code/redhat/velden/supplychain/stock-service/src/main/java/com/redhat/stock/services/StockServiceImpl.java

@@ -1,0 +1,10 @@
+/Users/phknezev/code/redhat/velden/supplychain/customer-service/src/main/java/com/redhat/customer/ApplicationStarter.java
+/Users/phknezev/code/redhat/velden/supplychain/customer-service/src/main/java/com/redhat/customer/MongoDBConfiguration.java
+/Users/phknezev/code/redhat/velden/supplychain/customer-service/src/main/java/com/redhat/customer/controllers/CustomerController.java
+/Users/phknezev/code/redhat/velden/supplychain/customer-service/src/main/java/com/redhat/customer/dtos/CustomerDTO.java
+/Users/phknezev/code/redhat/velden/supplychain/customer-service/src/main/java/com/redhat/customer/exceptions/EntityNotFoundException.java
+/Users/phknezev/code/redhat/velden/supplychain/customer-service/src/main/java/com/redhat/customer/models/CustomerEntity.java
+/Users/phknezev/code/redhat/velden/supplychain/customer-service/src/main/java/com/redhat/customer/repositories/CustomerRepository.java
+/Users/phknezev/code/redhat/velden/supplychain/customer-service/src/main/java/com/redhat/customer/repositories/MongoDBCustomerRepository.java
+/Users/phknezev/code/redhat/velden/supplychain/customer-service/src/main/java/com/redhat/customer/services/CustomerService.java
+/Users/phknezev/code/redhat/velden/supplychain/customer-service/src/main/java/com/redhat/customer/services/CustomerServiceImpl.java

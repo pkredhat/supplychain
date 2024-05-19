@@ -1,0 +1,14 @@
+[Unit]
+Description=Product Microservice for XYZ
+
+# You may want to start after your network is ready
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+ExecStart=/usr/bin/mvn -f /home/fedora/code/supplychain/product-service clean spring-boot:run
+Restart=Always
+PIDFile=/tmp/productms-pid
+
+[Install]
+WantedBy=network-online.target
