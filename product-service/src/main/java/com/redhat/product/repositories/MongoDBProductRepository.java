@@ -47,7 +47,7 @@ public class MongoDBProductRepository implements ProductRepository {
 
     @Override
     public ProductEntity findOneByName(String name) {
-        return productCollection.find(eq("name", name)).first();
+        return productCollection.find(eq("productName", name)).first();
     }
 
     @Override

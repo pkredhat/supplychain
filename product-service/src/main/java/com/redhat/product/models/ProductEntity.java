@@ -7,26 +7,27 @@ import java.util.Objects;
 
 public class ProductEntity {
 
+
     private ObjectId id;
-    private String name;
-    private String headquarters;
+    private String productName;
+    private String productDescription;
     private Date created;
 
     public ProductEntity() {
     }
 
-    public ProductEntity(ObjectId id, String name, String headquarters, Date created) {
+    public ProductEntity(ObjectId id, String productName, String productDescription, Date created) {
         this.id = id;
-        this.name = name;
-        this.headquarters = headquarters;
+        this.productName = productName;
+        this.productDescription = productDescription;
         this.created = created;
     }
 
     @Override
     public int hashCode() {
         int result = id != null ? id.hashCode() : 0;
-        result = 31 * result + (name != null ? name.hashCode() : 0);
-        result = 31 * result + (headquarters != null ? headquarters.hashCode() : 0);
+        result = 31 * result + (productName != null ? productName.hashCode() : 0);
+        result = 31 * result + (productDescription != null ? productDescription.hashCode() : 0);
         result = 31 * result + (created != null ? created.hashCode() : 0);
         return result;
     }
@@ -39,44 +40,40 @@ public class ProductEntity {
         ProductEntity that = (ProductEntity) o;
 
         if (!Objects.equals(id, that.id)) return false;
-        if (!Objects.equals(name, that.name)) return false;
-        if (!Objects.equals(headquarters, that.headquarters)) return false;
+        if (!Objects.equals(productName, that.productName)) return false;
+        if (!Objects.equals(productDescription, that.productDescription)) return false;
         return Objects.equals(created, that.created);
     }
 
     @Override
     public String toString() {
-        return "ProductEntity{" + "id=" + id + ", name='" + name + '\'' + ", headquarters='" + headquarters + '\'' + ", createdAt=" + created + '}';
+        return "ProductEntity{" + "id=" + id + ", productName='" + productName + '\'' + ", productDescription='" + productDescription + '\'' + ", createdAt=" + created + '}';
     }
 
     public ObjectId getId() {
         return id;
     }
-
     public void setId(ObjectId id) {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getProductName() {
+        return productName;
+    }
+    public void setProductName(String name) {
+        this.productName = name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getProductDescription() {
+        return productDescription;
     }
-
-    public String getHeadquarters() {
-        return headquarters;
-    }
-
-    public void setHeadquarters(String headquarters) {
-        this.headquarters = headquarters;
+    public void setProductDescription(String headquarters) {
+        this.productDescription = productDescription;
     }
 
     public Date getCreated() {
         return created;
     }
-
     public void setCreated(Date created) {
         this.created = created;
     }

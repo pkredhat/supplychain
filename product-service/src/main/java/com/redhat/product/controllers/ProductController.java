@@ -24,7 +24,7 @@ public class ProductController {
     @PostMapping("product")
     @ResponseStatus(HttpStatus.CREATED)
     public ProductDTO postProduct(@RequestBody ProductDTO productDTO) {
-        LOGGER.info("POST /product {}", productDTO.name());
+        LOGGER.info("POST /product {}", productDTO.productName());
         return productService.save(productDTO);
     }
 
