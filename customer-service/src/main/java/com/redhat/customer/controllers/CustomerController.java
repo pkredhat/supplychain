@@ -24,7 +24,7 @@ public class CustomerController {
     @PostMapping("customer")
     @ResponseStatus(HttpStatus.CREATED)
     public CustomerDTO postCustomer(@RequestBody CustomerDTO customerDTO) {
-        LOGGER.info("POST /customer {}", customerDTO.name());
+        LOGGER.info("POST /customer {}", customerDTO.firstName());
         return customerService.save(customerDTO);
     }
 

@@ -47,7 +47,7 @@ public class MongoDBCustomerRepository implements CustomerRepository {
 
     @Override
     public CustomerEntity findOneByName(String name) {
-        return customerCollection.find(eq("name", name)).first();
+        return customerCollection.find(eq("firstName", name)).first();
     }
 
     @Override

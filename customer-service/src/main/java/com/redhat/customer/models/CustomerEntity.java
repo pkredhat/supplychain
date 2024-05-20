@@ -8,25 +8,31 @@ import java.util.Objects;
 public class CustomerEntity {
 
     private ObjectId id;
-    private String name;
-    private String headquarters;
+    private String firstName;
+    private String lastName;
+    private String address;
+    private String phoneNumber;
     private Date created;
 
     public CustomerEntity() {
     }
 
-    public CustomerEntity(ObjectId id, String name, String headquarters, Date created) {
+    public CustomerEntity(ObjectId id, String firstName, String lastName, String address, String phoneNumber, Date created) {
         this.id = id;
-        this.name = name;
-        this.headquarters = headquarters;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.address = address;
+        this.phoneNumber = phoneNumber;
         this.created = created;
     }
 
     @Override
     public int hashCode() {
         int result = id != null ? id.hashCode() : 0;
-        result = 31 * result + (name != null ? name.hashCode() : 0);
-        result = 31 * result + (headquarters != null ? headquarters.hashCode() : 0);
+        result = 31 * result + (firstName != null ? firstName.hashCode() : 0);
+        result = 31 * result + (lastName != null ? lastName.hashCode() : 0);
+        result = 31 * result + (address != null ? address.hashCode() : 0);
+        result = 31 * result + (phoneNumber != null ? phoneNumber.hashCode() : 0);
         result = 31 * result + (created != null ? created.hashCode() : 0);
         return result;
     }
@@ -39,14 +45,17 @@ public class CustomerEntity {
         CustomerEntity that = (CustomerEntity) o;
 
         if (!Objects.equals(id, that.id)) return false;
-        if (!Objects.equals(name, that.name)) return false;
-        if (!Objects.equals(headquarters, that.headquarters)) return false;
+        if (!Objects.equals(firstName, that.firstName)) return false;
+        if (!Objects.equals(lastName, that.lastName)) return false;
+        if (!Objects.equals(address, that.address)) return false;
+        if (!Objects.equals(phoneNumber, that.phoneNumber)) return false;
+
         return Objects.equals(created, that.created);
     }
 
     @Override
     public String toString() {
-        return "CustomerEntity{" + "id=" + id + ", name='" + name + '\'' + ", headquarters='" + headquarters + '\'' + ", createdAt=" + created + '}';
+        return "CustomerEntity{" + "id=" + id + ", firstName='" + firstName + '\'' + ", lastName='" + lastName + '\'' + ", createdAt=" + created + '}';
     }
 
     public ObjectId getId() {
@@ -57,26 +66,38 @@ public class CustomerEntity {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
+    }
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getLastName() {
+        return lastName;
+    }
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    public String getHeadquarters() {
-        return headquarters;
+    public String getAddress() {
+        return address;
+    }
+    public void setAddress(String address) {
+        this.address = address;
     }
 
-    public void setHeadquarters(String headquarters) {
-        this.headquarters = headquarters;
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
 
     public Date getCreated() {
         return created;
     }
-
     public void setCreated(Date created) {
         this.created = created;
     }

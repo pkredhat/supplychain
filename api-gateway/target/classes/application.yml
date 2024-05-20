@@ -7,6 +7,10 @@ spring:
   cloud:
     gateway:
       routes:
+        - id: customer-service
+          uri: lb://customer-service
+          predicates:
+            - Path=/api/customer/**,/api/customers
         - id: company-service
           uri: lb://company-service
           predicates:
