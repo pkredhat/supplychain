@@ -24,7 +24,7 @@ public class OrderController {
     @PostMapping("order")
     @ResponseStatus(HttpStatus.CREATED)
     public OrderDTO postOrder(@RequestBody OrderDTO orderDTO) {
-        LOGGER.info("POST /order {}", orderDTO.name());
+        LOGGER.info("POST /order {}", orderDTO.orderName());
         return orderService.save(orderDTO);
     }
 

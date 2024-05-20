@@ -47,7 +47,7 @@ public class MongoDBOrderRepository implements OrderRepository {
 
     @Override
     public OrderEntity findOneByName(String name) {
-        return orderCollection.find(eq("name", name)).first();
+        return orderCollection.find(eq("orderName", name)).first();
     }
 
     @Override

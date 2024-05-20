@@ -14,13 +14,9 @@ spring:
         - id: company-service
           uri: lb://company-service
           predicates:
-            - Path=/api/company/**,/api/companies
-        - id: employee-service
-          uri: lb://employee-service
-          predicates:
-            - Path=/api/employee/**,/api/employees            
-        - id: orders-service
-          uri: lb://orders-service
+            - Path=/api/company/**,/api/companies        
+        - id: order-service
+          uri: lb://order-service
           predicates::
             - Path=/api/order/**,/api/orders
         - id: product-service
