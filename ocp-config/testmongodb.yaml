@@ -1,0 +1,96 @@
+kind: StatefulSet
+apiVersion: apps/v1
+metadata:
+  name: mongodb-standalone
+  namespace: mongo-forever
+  labels:
+    app: mongodb-standalone
+    mongodb_setup: standalone
+    role: standalone
+spec:
+  serviceName: mongodb-standalone
+  revisionHistoryLimit: 10
+  persistentVolumeClaimRetentionPolicy:
+    whenDeleted: Retain
+    whenScaled: Retain
+  volumeClaimTemplates:
+    - kind: PersistentVolumeClaim
+      apiVersion: v1
+      metadata:
+        name: mongodb-standalone
+        creationTimestamp: null
+      spec:
+        accessModes:
+          - ReadWriteOnce
+        resources:
+          requests:
+            storage: 1Gi
+        storageClassName: gp3-csi
+        volumeMode: Filesystem
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: mongodb-standalone
+        mongodb_setup: standalone
+        role: standalone
+    spec:
+      containers:
+        - resources: {}
+          readinessProbe:
+            exec:
+              command:
+                - mongo
+                - '--eval'
+                - db.adminCommand('ping')
+            initialDelaySeconds: 15
+            timeoutSeconds: 5
+            periodSeconds: 15
+            successThreshold: 1
+            failureThreshold: 5
+          terminationMessagePath: /dev/termination-log
+          name: mongo
+          livenessProbe:
+            exec:
+              command:
+                - mongo
+                - '--eval'
+                - db.adminCommand('ping')
+            initialDelaySeconds: 15
+            timeoutSeconds: 5
+            periodSeconds: 15
+            successThreshold: 1
+            failureThreshold: 5
+          env:
+            - name: MONGO_ROOT_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mongodb-secret
+                  key: password
+            - name: MONGO_ROOT_USERNAME
+              value: admin
+            - name: MONGO_MODE
+              value: standalone
+          imagePullPolicy: IfNotPresent
+          volumeMounts:
+            - name: mongodb-standalone
+              mountPath: /data/db
+          terminationMessagePolicy: File
+          image: 'quay.io/opstree/mongo:v5.0.6'
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 30
+      dnsPolicy: ClusterFirst
+      securityContext:
+        fsGroup: 1000750000
+      schedulerName: default-scheduler
+  podManagementPolicy: OrderedReady
+  replicas: 1
+  updateStrategy:
+    type: RollingUpdate
+    rollingUpdate:
+      partition: 0
+  selector:
+    matchLabels:
+      app: mongodb-standalone
+      mongodb_setup: standalone
+      role: standalone

@@ -1,0 +1,28 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: mongodb-standalone
+  namespace: mongo-forever
+  labels:
+    app: mongodb-standalone
+    mongodb_setup: standalone
+    role: standalone
+spec:
+  clusterIP: None
+  ipFamilies:
+    - IPv4
+  ports:
+    - name: mongodb
+      protocol: TCP
+      port: 27017
+      targetPort: 27017
+  internalTrafficPolicy: Cluster
+  clusterIPs:
+    - None
+  type: ClusterIP
+  ipFamilyPolicy: SingleStack
+  sessionAffinity: None
+  selector:
+    app: mongodb-standalone
+    mongodb_setup: standalone
+    role: standalone
